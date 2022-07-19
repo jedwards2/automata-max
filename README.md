@@ -1,6 +1,3 @@
-# automata-max
-Node for Max script for using elementary cellular automata
-
 # Automata Generator
 A Node for Max script used to compute rows of cellular auomata according to any rule between 1-127.  Can be outputted as single digits, or in rows.  
 
