@@ -1,7 +1,9 @@
 const maxApi = require("max-api");
 
 let currentRule = 30;
-let currentRow = [0, 0, 0, 1, 0, 0, 0, 0];
+let currentRow = [0, 1, 0, 1, 1, 0, 0, 0];
+let currentMode = 0;
+let counter = 0;
 
 maxApi.post("Script started succesfully");
 
@@ -11,16 +13,38 @@ maxApi.addHandler("changeRule", (key) => {
 });
 
 maxApi.addHandler("seedData", (data) => {
-  for (let i = 0; i < data.length; i++) {
-    maxApi.post(data[i]);
-  }
   currentRow = data;
   maxApi.post(`changed current row to ${data}`);
 });
 
 maxApi.addHandler("computeRow", () => {
-  compute_new_row(currentRow);
-  maxApi.outlet(currentRow);
+  if (currentMode == 0) {
+    compute_new_row(currentRow);
+    maxApi.outlet(currentRow);
+  }
+
+  if (currentMode == 1) {
+    maxApi.post(currentRow);
+    let item = currentRow[counter];
+    counter += 1;
+    maxApi.outlet(item);
+    if (counter == currentRow.length) {
+      compute_new_row(currentRow);
+      counter = 0;
+    }
+  }
+});
+
+maxApi.addHandler("switchMode", () => {
+  if (currentMode == 0) {
+    counter = 0;
+    currentMode = 1;
+    maxApi.post("Current Mode: 1");
+  } else {
+    counter = 0;
+    currentMode = 0;
+    maxApi.post("Current Mode: 0");
+  }
 });
 
 function compute_new_row(row) {

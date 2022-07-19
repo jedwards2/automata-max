@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1546.0, 62.0, 952.0, 910.0 ],
+		"rect" : [ 1546.0, 62.0, 1059.0, 907.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-14",
+					"id" : "obj-5",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 227.0, 131.0, 22.0 ],
-					"text" : "seedData \"01000000\""
+					"patching_rect" : [ 385.0, 320.0, 74.0, 22.0 ],
+					"text" : "switchMode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 315.0, 241.0, 131.0, 35.0 ],
+					"text" : "seedData \"01001000001010000\""
 				}
 
 			}
@@ -57,7 +70,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 345.0, 265.0, 151.0, 22.0 ],
+					"patching_rect" : [ 341.0, 284.0, 151.0, 22.0 ],
 					"text" : "computeRow"
 				}
 
@@ -70,8 +83,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 236.0, 460.0, 56.0, 35.0 ],
-					"text" : "1 0 1 0 1 0 1 1"
+					"patching_rect" : [ 253.0, 410.0, 59.0, 35.0 ],
+					"text" : "1 0 1 0 0 1 0 0"
 				}
 
 			}
@@ -82,8 +95,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 293.0, 194.0, 99.0, 22.0 ],
-					"text" : "changeRule 40"
+					"patching_rect" : [ 293.0, 208.0, 99.0, 22.0 ],
+					"text" : "changeRule 60"
 				}
 
 			}
@@ -103,7 +116,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 465.0, 455.0, 400.0, 220.0 ],
+					"patching_rect" : [ 395.0, 410.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -115,7 +128,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 105.0, 326.0, 80.0, 22.0 ],
+					"patching_rect" : [ 147.0, 329.0, 80.0, 22.0 ],
 					"text" : "script start"
 				}
 
@@ -131,8 +144,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -173,6 +184,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
