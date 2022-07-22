@@ -47,6 +47,7 @@ maxApi.addHandler("switchMode", () => {
   }
 });
 
+//sets and updates currentRow - DOES NOT RETURN ROW
 function compute_new_row(row) {
   let a1 = 0;
   let a2 = 0;
