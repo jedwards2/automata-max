@@ -27,7 +27,6 @@ maxApi.addHandler("computeRow", () => {
   }
 
   if (currentMode == 1) {
-    maxApi.post(currentRow);
     let item = currentRow[counter];
     counter += 1;
     maxApi.outlet(item);
