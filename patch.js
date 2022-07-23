@@ -7,16 +7,19 @@ let counter = 0;
 
 maxApi.post("Script started succesfully");
 
+//changes the current rule of the generator
 maxApi.addHandler("changeRule", (key) => {
   currentRule = key;
   maxApi.post(`changed current rule to ${key}`);
 });
 
+//changes the currentRow
 maxApi.addHandler("seedData", (data) => {
   currentRow = data;
   maxApi.post(`changed current row to ${data}`);
 });
 
+//updates and changes the currentRow
 maxApi.addHandler("computeRow", () => {
   if (currentMode == 0) {
     compute_new_row(currentRow);
@@ -35,6 +38,7 @@ maxApi.addHandler("computeRow", () => {
   }
 });
 
+//switches between 0 and 1 mode
 maxApi.addHandler("switchMode", () => {
   if (currentMode == 0) {
     counter = 0;
